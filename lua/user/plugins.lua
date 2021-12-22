@@ -94,7 +94,8 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
-
+  use "Shatur/neovim-ayu"
+  
   -- cmp plugins
   use {"hrsh7th/nvim-cmp",
     commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7"
