@@ -92,7 +92,6 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
   use "Shatur/neovim-ayu"
   
@@ -143,9 +142,6 @@ return packer.startup(function(use)
   }
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
-
-  -- Java
-  use "mfussenegger/nvim-jdtls"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
