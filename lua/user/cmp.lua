@@ -15,6 +15,35 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+--   פּ ﯟ   蘒練 some other good icons
+local kind_icons = {
+  Class = " ",
+  Color = " ",
+  Constant = "ﲀ ",
+  Constructor = " ",
+  Enum = "練",
+  EnumMember = " ",
+  Event = " ",
+  Field = " ",
+  File = "",
+  Folder = " ",
+  Function = " ",
+  Interface = "ﰮ ",
+  Keyword = " ",
+  Method = " ",
+  Module = " ",
+  Operator = "",
+  Property = " ",
+  Reference = " ",
+  Snippet = " ",
+  Struct = " ",
+  Text = " ",
+  TypeParameter = " ",
+  Unit = "塞",
+  Value = " ",
+  Variable = " ",
+}
+
 -- https://github.com/microsoft/vscode/blob/main/src/vs/base/common/codicons.ts
 -- go to the above and then enter <c-v>u<unicode> and the symbold should appear
 -- or go here and upload the font file: https://mathew-kurian.github.io/CharacterMap/
@@ -51,62 +80,33 @@ end
 --   symbol misc
 --   telescope
 
---   פּ ﯟ   蘒練 some other good icons
 -- local kind_icons = {
---   Text = "",
---   Method = "m",
---   Function = "",
---   Constructor = "",
---   Field = "",
---   Variable = "",
---   Class = "",
---   Interface = "",
---   Module = "",
---   Property = "",
---   Unit = "",
---   Value = "",
---   Enum = "",
---   Keyword = "",
---   Snippet = "",
---   Color = "",
---   File = "",
---   Reference = "",
---   Folder = "",
---   EnumMember = "",
---   Constant = "",
---   Struct = "",
---   Event = "",
---   Operator = "",
---   TypeParameter = "",
+--   Text = " ",
+--   Method = " ",
+--   Function = " ",
+--   Constructor = " ",
+--   Field = " ",
+--   Variable = " ",
+--   Class = " ",
+--   Interface = " ",
+--   Module = " ",
+--   Property = " ",
+--   Unit = " ",
+--   Value = " ",
+--   Enum = " ",
+--   Keyword = " ",
+--   Snippet = " ",
+--   Color = " ",
+--   File = " ",
+--   Reference = " ",
+--   Folder = " ",
+--   EnumMember = " ",
+--   Constant = " ",
+--   Struct = " ",
+--   Event = " ",
+--   Operator = " ",
+--   TypeParameter = " ",
 -- }
-
-local kind_icons = {
-  Text = " ",
-  Method = " ",
-  Function = " ",
-  Constructor = " ",
-  Field = " ",
-  Variable = " ",
-  Class = " ",
-  Interface = " ",
-  Module = " ",
-  Property = " ",
-  Unit = " ",
-  Value = " ",
-  Enum = " ",
-  Keyword = " ",
-  Snippet = " ",
-  Color = " ",
-  File = " ",
-  Reference = " ",
-  Folder = " ",
-  EnumMember = " ",
-  Constant = " ",
-  Struct = " ",
-  Event = " ",
-  Operator = " ",
-  TypeParameter = " ",
-}
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
