@@ -1,6 +1,6 @@
 vim.cmd [[
 try
-  colorscheme spacedark
+  colorscheme ayu-mirage
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
