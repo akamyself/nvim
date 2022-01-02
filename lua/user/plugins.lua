@@ -47,6 +47,10 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-web-devicons"
+  -- use {
+  --   "yamatsum/nvim-nonicons",
+  --   requires = { "kyazdani42/nvim-web-devicons" },
+  -- }
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -94,7 +98,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "rebelot/kanagawa.nvim"
   use "Shatur/neovim-ayu"
-  
+
   -- cmp plugins
   use {"hrsh7th/nvim-cmp",
     commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7"
