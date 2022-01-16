@@ -64,18 +64,18 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua" -- The fastest Neovim colorizer.
   use "karb94/neoscroll.nvim" -- Smooth scrolling neovim plugin
   use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager
+  use "windwp/nvim-spectre" -- A search panel, find the enemy and replace them with dark power.
+  use "Shatur/neovim-session-manager" -- A simple wrapper around :mksession
   -- use "ThePrimeagen/harpoon"
   -- use "andymass/vim-matchup" -- navigate and highlight matching words (vim script)
   -- use "MattesGroeger/vim-bookmarks" -- VIM bookmarks plugin (vim script)
   -- use "lunarvim/vim-solidity" -- VIM syntax file for Solidity (vim script)
   -- use "nacro90/numb.nvim" -- Peek lines just when you intend
   -- use "monaqa/dial.nvim" -- Enhanced increment/decrement plugin
-  use "windwp/nvim-spectre" -- A search panel, find the enemy and replace them with dark power.
   -- use "folke/zen-mode.nvim" -- Distraction-free coding
   -- use "folke/todo-comments.nvim" -- Highlight, list and search todo comments in your projects
   -- use "kevinhwang91/nvim-bqf" -- Better quickfix window in Neovim, polish old quickfix window.
   -- use "blackCauldron7/surround.nvim" -- A surround text object plugin
-  use "Shatur/neovim-session-manager" -- A simple wrapper around :mksession
   -- use "tversteeg/registers.nvim" -- preview the contents of the registers
   -- use "metakirby5/codi.vim" -- The interactive scratchpad for hackers.
   use "nyngwang/NeoZoom.lua" -- Layout-Preserving Zoomer
