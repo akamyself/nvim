@@ -42,61 +42,54 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from VIM
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim"
+  use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  -- use {
-  --   "yamatsum/nvim-nonicons",
-  --   requires = { "kyazdani42/nvim-web-devicons" },
-  -- }
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- Delete buffers & close files without closing your windows
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
+  use "akinsho/toggleterm.nvim" -- Help easily manage multiple terminal windows
+  use "ahmedkhalf/project.nvim" -- Superior project management
+  use "lewis6991/impatient.nvim" -- Improve startup time
   use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  use "goolord/alpha-nvim" -- Greeter dashboard
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
-  use "unblevable/quick-scope"
-  use "phaazon/hop.nvim"
-  use "andymass/vim-matchup"
-  use "nacro90/numb.nvim"
-  use "monaqa/dial.nvim"
-  use "norcalli/nvim-colorizer.lua"
-  use "windwp/nvim-spectre"
-  use "folke/zen-mode.nvim"
-  use "karb94/neoscroll.nvim"
-  use "folke/todo-comments.nvim"
-  use "kevinhwang91/nvim-bqf"
-  use "ThePrimeagen/harpoon"
-  use "MattesGroeger/vim-bookmarks"
-  use "lunarvim/vim-solidity"
-  use "blackCauldron7/surround.nvim"
-  use "tpope/vim-repeat"
-  use "Shatur/neovim-session-manager"
-  use "rcarriga/nvim-notify"
-  use "tversteeg/registers.nvim"
-  -- use "metakirby5/codi.vim"
-  use "nyngwang/NeoZoom.lua"
-  use "SmiteshP/nvim-gps"
-  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-  use {
 
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    ft = "markdown",
-  }
+  -- Testing
+  use "unblevable/quick-scope" -- Lightning fast left-right movement in Vim
+  use "phaazon/hop.nvim" -- Neovim motion on speed
+  use "norcalli/nvim-colorizer.lua" -- The fastest Neovim colorizer.
+  use "karb94/neoscroll.nvim" -- Smooth scrolling neovim plugin
+  use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager
+  -- use "ThePrimeagen/harpoon"
+  -- use "andymass/vim-matchup" -- navigate and highlight matching words (vim script)
+  -- use "MattesGroeger/vim-bookmarks" -- VIM bookmarks plugin (vim script)
+  -- use "lunarvim/vim-solidity" -- VIM syntax file for Solidity (vim script)
+  -- use "nacro90/numb.nvim" -- Peek lines just when you intend
+  -- use "monaqa/dial.nvim" -- Enhanced increment/decrement plugin
+  use "windwp/nvim-spectre" -- A search panel, find the enemy and replace them with dark power.
+  -- use "folke/zen-mode.nvim" -- Distraction-free coding
+  -- use "folke/todo-comments.nvim" -- Highlight, list and search todo comments in your projects
+  -- use "kevinhwang91/nvim-bqf" -- Better quickfix window in Neovim, polish old quickfix window.
+  -- use "blackCauldron7/surround.nvim" -- A surround text object plugin
+  use "Shatur/neovim-session-manager" -- A simple wrapper around :mksession
+  -- use "tversteeg/registers.nvim" -- preview the contents of the registers
+  -- use "metakirby5/codi.vim" -- The interactive scratchpad for hackers.
+  use "nyngwang/NeoZoom.lua" -- Layout-Preserving Zoomer
+  -- use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+  -- use {
+  --   "iamcco/markdown-preview.nvim",
+  --   run = "cd app && npm install",
+  --   ft = "markdown",
+  -- }
+  -- use "SmiteshP/nvim-gps"
 
   -- Colorschemes
-  use "folke/tokyonight.nvim"
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use "rebelot/kanagawa.nvim"
   use "Shatur/neovim-ayu"
 
   -- cmp plugins
@@ -125,7 +118,6 @@ return packer.startup(function(use)
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
-  -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -136,16 +128,15 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "filipdutescu/renamer.nvim"
-  use "simrat39/symbols-outline.nvim"
-  use "ray-x/lsp_signature.nvim"
-  use "b0o/SchemaStore.nvim"
+  -- use "filipdutescu/renamer.nvim" -- VS Code-like renaming UI
+  -- use "simrat39/symbols-outline.nvim" -- A tree like view for symbols using LSP
+  -- use "ray-x/lsp_signature.nvim" -- LSP signature hint as you type
+  -- use "b0o/SchemaStore.nvim" -- Provide access to the SchemaStore catalog
   use {
-    "folke/trouble.nvim",
+    "folke/trouble.nvim", -- A pretty diagnostics, references, telescope results, quickfix and location list
     cmd = "TroubleToggle",
   }
-  use "github/copilot.vim"
-  use "RRethy/vim-illuminate"
+  -- use "RRethy/vim-illuminate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -160,25 +151,25 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
-  use "windwp/nvim-ts-autotag"
-  use "romgrk/nvim-treesitter-context"
-  use "mizlan/iswap.nvim"
+  use "ChristianChiarulli/nvim-ts-rainbow" -- Rainbow parentheses
+  use "nvim-treesitter/playground" -- View treesitter information directly in Neovim!
+  -- use "windwp/nvim-ts-autotag" -- Use treesitter to auto close and auto rename HTML tag
+  -- use "romgrk/nvim-treesitter-context" -- Show code context
+  -- use "mizlan/iswap.nvim" -- Interactively select and swap function arguments, list elements, and more
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  use "f-person/git-blame.nvim"
-  use "ruifm/gitlinker.nvim"
-  use "mattn/vim-gist"
-  use "mattn/webapi-vim"
-  use "https://github.com/rhysd/conflict-marker.vim"
+  use "f-person/git-blame.nvim" -- git blame plugin
+  -- use "ruifm/gitlinker.nvim" -- Plugin to generate shareable file permalinks (with line ranges) for several git web frontend hosts
+  -- use "mattn/vim-gist" -- Plugin for Gist
+  -- use "mattn/webapi-vim" -- VIM interface to Web API (vim script)
+  -- use "https://github.com/rhysd/conflict-marker.vim"
 
   -- DAP
-  use "mfussenegger/nvim-dap"
-  use "theHamsta/nvim-dap-virtual-text"
-  use "rcarriga/nvim-dap-ui"
-  use "Pocco81/DAPInstall.nvim"
+  -- use "mfussenegger/nvim-dap" -- Debug Adapter Protocol client implementation
+  -- use "theHamsta/nvim-dap-virtual-text" -- Add virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions
+  -- use "rcarriga/nvim-dap-ui" -- A UI for nvim-dap
+  -- use "Pocco81/DAPInstall.nvim" -- Manage several debuggers for Nvim-dap
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
