@@ -8,6 +8,11 @@ local options = {
   cursorline = true,                       -- highlight the current line
   expandtab = true,                        -- convert tabs to spaces
   fileencoding = "utf-8",                  -- the encoding written to a file
+  -- foldcolumn = "1",                        -- default "0" (disable)
+  foldenable = true,                       -- enable fold
+  foldlevel = 99,                          -- default 0 (close all folds) higher number = less folds
+  foldmethod = "indent",                   -- set fold
+  foldnestmax = 5,                         -- default 20
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
