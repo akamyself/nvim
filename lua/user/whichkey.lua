@@ -103,23 +103,19 @@ local m_mappings = {
 }
 
 local mappings = {
+  ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  -- ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  -- ["f"] = {
-  --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  --   "Find files",
-  -- },
-  -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["d"] = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["w"] = { "<cmd>write<cr>", "Write" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
