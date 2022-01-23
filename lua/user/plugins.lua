@@ -101,9 +101,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp" -- floating completion suggestions
   use "hrsh7th/cmp-emoji"
-  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lua" -- add lua to completion suggestions
   use {
     "tzachar/cmp-tabnine",
     config = function()
@@ -131,7 +131,7 @@ return packer.startup(function(use)
   -- use "filipdutescu/renamer.nvim" -- VS Code-like renaming UI
   -- use "simrat39/symbols-outline.nvim" -- A tree like view for symbols using LSP
   -- use "ray-x/lsp_signature.nvim" -- LSP signature hint as you type
-  -- use "b0o/SchemaStore.nvim" -- Provide access to the SchemaStore catalog
+  use "b0o/SchemaStore.nvim" -- Provide access to the SchemaStore catalog
   use {
     "folke/trouble.nvim", -- A pretty diagnostics, references, telescope results, quickfix and location list
     cmd = "TroubleToggle",
