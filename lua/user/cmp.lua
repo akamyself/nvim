@@ -204,7 +204,7 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = false,
+  documentation = true,
   -- documentation = {
   -- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   -- },
