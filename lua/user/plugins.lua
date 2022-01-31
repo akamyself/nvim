@@ -93,6 +93,7 @@ return packer.startup(function(use)
   use "Shatur/neovim-ayu"
   use "navarasu/onedark.nvim"
   use "rmehri01/onenord.nvim"
+  use "Mofiqul/dracula.nvim"
 
   -- cmp plugins
   use {"hrsh7th/nvim-cmp",
