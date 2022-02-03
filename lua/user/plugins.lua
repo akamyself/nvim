@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim" -- Greeter dashboard
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "folke/which-key.nvim"
 
   -- Testing
   use "unblevable/quick-scope" -- Lightning fast left-right movement in Vim
@@ -66,10 +67,11 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager
   use "windwp/nvim-spectre" -- A search panel, find the enemy and replace them with dark power.
   use "Shatur/neovim-session-manager" -- A simple wrapper around :mksession
+  use "lunarvim/vim-solidity" -- VIM syntax file for Solidity (vim script)
+  use "nyngwang/NeoZoom.lua" -- Layout-Preserving Zoomer
   -- use "ThePrimeagen/harpoon"
   -- use "andymass/vim-matchup" -- navigate and highlight matching words (vim script)
   -- use "MattesGroeger/vim-bookmarks" -- VIM bookmarks plugin (vim script)
-  -- use "lunarvim/vim-solidity" -- VIM syntax file for Solidity (vim script)
   -- use "nacro90/numb.nvim" -- Peek lines just when you intend
   -- use "monaqa/dial.nvim" -- Enhanced increment/decrement plugin
   -- use "folke/zen-mode.nvim" -- Distraction-free coding
@@ -78,7 +80,6 @@ return packer.startup(function(use)
   -- use "blackCauldron7/surround.nvim" -- A surround text object plugin
   -- use "tversteeg/registers.nvim" -- preview the contents of the registers
   -- use "metakirby5/codi.vim" -- The interactive scratchpad for hackers.
-  use "nyngwang/NeoZoom.lua" -- Layout-Preserving Zoomer
   -- use { 'michaelb/sniprun', run = 'bash ./install.sh'}
   -- use {
   --   "iamcco/markdown-preview.nvim",
