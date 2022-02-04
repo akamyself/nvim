@@ -20,6 +20,7 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 -- on test
+require "user.onedark"
 require "user.quickscope"
 require "user.hop"
 require "user.colorizer"
