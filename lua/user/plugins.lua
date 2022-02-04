@@ -155,8 +155,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "ChristianChiarulli/nvim-ts-rainbow" -- Rainbow parentheses
   use "nvim-treesitter/playground" -- View treesitter information directly in Neovim!
+  use "p00f/nvim-ts-rainbow" -- Rainbow parentheses
   -- use "windwp/nvim-ts-autotag" -- Use treesitter to auto close and auto rename HTML tag
   -- use "romgrk/nvim-treesitter-context" -- Show code context
   -- use "mizlan/iswap.nvim" -- Interactively select and swap function arguments, list elements, and more
