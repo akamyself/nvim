@@ -2,11 +2,6 @@ local M = {}
 
 M.setup = function()
   local signs = {
-
-    --   error
-    --   info
-    --   question
-    --   warning
     { name = "DiagnosticSignError", text = " " },
     { name = "DiagnosticSignWarn", text = " " },
     { name = "DiagnosticSignHint", text = " " },
@@ -18,14 +13,12 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
     virtual_text = false,
-    -- show signs
     signs = {
       active = signs,
     },
     update_in_insert = true,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
       focusable = true,
