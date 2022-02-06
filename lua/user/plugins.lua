@@ -108,7 +108,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp" -- floating completion suggestions
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua" -- add lua to completion suggestions
-  use "David-Kunz/cmp-npm"
   use {
     "tzachar/cmp-tabnine",
     config = function()
