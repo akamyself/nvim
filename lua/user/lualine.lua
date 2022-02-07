@@ -12,23 +12,14 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
---   git add
---   git mod
---   git remove
---   git ignore
---   git rename
---   error
---   info
---   question
---   warning
---   lightbulb
+local icons = require "user.icons"
 
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   -- symbols = { error = " ", warn = " " },
-  symbols = { error = "  ", warn = "  " },
+  symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
   colored = false,
   update_in_insert = false,
   always_visible = true,
@@ -38,7 +29,7 @@ local diff = {
   "diff",
   colored = false,
   -- symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  symbols = { added = "  ", modified = "  ", removed = "  " }, -- changes diff symbols
+  symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
   cond = hide_in_width,
 }
 

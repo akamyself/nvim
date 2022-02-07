@@ -15,100 +15,9 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
--- https://github.com/microsoft/vscode/blob/main/src/vs/base/common/codicons.ts
--- go to the above and then enter <c-v>u<unicode> and the symbold should appear
--- or go here and upload the font file: https://mathew-kurian.github.io/CharacterMap/
--- list of all icons: https://microsoft.github.io/vscode-codicons/dist/codicon.html
---   array
---   big circle
---   big unfilled
---   bug
---  circle
---  close
---   code
---   comment
---   dashboard
---   diff
---   error
---   file
---   files
---   folder
---   git add
---   git mod
---   git remove
---   git ignore
---   git rename
---   history
---   info
---   lightbulb
---   lock
---   new file
---   number
---   open folder
---   project
---   question
---   search
---   symbol misc
---   telescope
---   warning
+local icons = require "user.icons"
 
---   פּ ﯟ   蘒練 some other good icons
-local kind_icons = {
-  Class = " ",
-  Color = " ",
-  Constant = "ﲀ ",
-  Constructor = " ",
-  Enum = "練",
-  EnumMember = " ",
-  Event = " ",
-  Field = " ",
-  File = "",
-  Folder = " ",
-  Function = " ",
-  Interface = "ﰮ ",
-  Keyword = " ",
-  Method = " ",
-  Module = " ",
-  Operator = "",
-  Property = " ",
-  Reference = " ",
-  Snippet = " ",
-  Struct = " ",
-  Text = " ",
-  TypeParameter = " ",
-  Unit = "塞",
-  Value = " ",
-  Variable = " ",
-}
-
--- local kind_icons = {
---   Class = " ",
---   Color = " ",
---   Constant = " ",
---   Constructor = " ",
---   Enum = " ",
---   EnumMember = " ",
---   Event = " ",
---   Field = " ",
---   File = " ",
---   Folder = " ",
---   Function = " ",
---   Interface = " ",
---   Keyword = " ",
---   Method = " ",
---   Module = " ",
---   Operator = " ",
---   Property = " ",
---   Reference = " ",
---   Snippet = " ",
---   Struct = " ",
---   Text = " ",
---   TypeParameter = " ",
---   Unit = " ",
---   Value = " ",
---   Variable = " ",
--- }
--- find more here: https://www.nerdfonts.com/cheat-sheet
+local kind_icons = icons.kind
 
 cmp.setup {
   snippet = {
@@ -169,7 +78,7 @@ cmp.setup {
         -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
         -- menu = entry.completion_item.data.detail .. " " .. menu
         -- end
-        vim_item.kind = " "
+        vim_item.kind = icons.misc.Robot
       end
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- NOTE: order matters
@@ -204,7 +113,7 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = true,
+  documentation = false,
   -- documentation = {
   -- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   -- },
