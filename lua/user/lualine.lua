@@ -20,7 +20,7 @@ local diagnostics = {
   sections = { "error", "warn" },
   -- symbols = { error = " ", warn = " " },
   symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
-  colored = false,
+  colored = true,
   update_in_insert = false,
   always_visible = true,
 }
@@ -42,7 +42,7 @@ local mode = {
 
 local filetype = {
   "filetype",
-  icons_enabled = false,
+  icons_enabled = true,
   icon = nil,
 }
 
