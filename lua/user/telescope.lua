@@ -5,11 +5,12 @@ end
 
 local actions = require "telescope.actions"
 telescope.load_extension "media_files"
+local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
 
-    prompt_prefix = "  ",
+    prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
 
@@ -94,5 +95,29 @@ telescope.setup {
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
+    file_browser = {
+      -- theme = "ivy",
+      -- require("telescope.themes").get_dropdown {
+      --   previewer = false,
+      --   -- even more opts
+      -- },
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        previewer = false,
+        -- even more opts
+      },
+    },
   },
 }
+
+telescope.load_extension "ui-select"
+telescope.load_extension "file_browser"

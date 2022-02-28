@@ -53,11 +53,11 @@ local setup = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
     width = { min = 20, max = 50 }, -- min and max width of the columns
     spacing = 3, -- spacing between columns
-    align = "left", -- align columns left, center or right
+    align = "center", -- align columns left, center or right
   },
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-  show_help = true, -- show help message on the command line when the popup is visible
+  show_help = false, -- show help message on the command line when the popup is visible
   -- triggers = "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
   triggers_blacklist = {
@@ -103,24 +103,22 @@ local m_mappings = {
 }
 
 local mappings = {
+  ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  -- ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
+  ["d"] = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
-  ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Projects" },
+  ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
+  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
+  -- ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["w"] = { "<cmd>write<cr>", "Write" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
 
@@ -138,6 +136,25 @@ local mappings = {
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+  },
+
+  f = {
+    name = "Fin",
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    f = {
+      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Find files",
+    },
+    t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help" },
+    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+    l = { "<cmd>Telescope resume<cr>", "Last Search" },
+    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    R = { "<cmd>Telescope registers<cr>", "Registers" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   g = {
@@ -185,11 +202,11 @@ local mappings = {
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+      "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
       "Next Diagnostic",
     },
     k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+      "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
       "Prev Diagnostic",
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
@@ -209,8 +226,9 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     -- f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    g = { "<cmd>Telescope git_files<cr>", "Git Files" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
-    i = { "<cmd>Telescope media_files<cr>", "Media" },
+    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
@@ -220,11 +238,19 @@ local mappings = {
   },
 
   S = {
-    name = "Session",
-    s = { "<cmd>SaveSession<cr>", "Save" },
-    l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-    d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
-    f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
+    -- name = "Session",
+    -- s = { "<cmd>SaveSession<cr>", "Save" },
+    -- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
+    -- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
+    -- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
+    name = "SnipRun",
+    c = { "<cmd>SnipClose<cr>", "Close" },
+    f = { "<cmd>%SnipRun<cr>", "Run File" },
+    i = { "<cmd>SnipInfo<cr>", "Info" },
+    m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
+    r = { "<cmd>SnipReset<cr>", "Reset" },
+    t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
+    x = { "<cmd>SnipTerminate<cr>", "Terminate" },
   },
 
   t = {
@@ -258,9 +284,9 @@ local vopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-  ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+  ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+  s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
 }
-
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
