@@ -62,7 +62,7 @@ return packer.startup(function(use)
   -- Testing
   use "unblevable/quick-scope" -- Lightning fast left-right movement in Vim
   use "phaazon/hop.nvim" -- Neovim motion on speed
-  use "norcalli/nvim-colorizer.lua" -- The fastest Neovim colorizer.
+  use "br1anchen/nvim-colorizer.lua" -- The newer fastest Neovim colorizer.
   use "karb94/neoscroll.nvim" -- Smooth scrolling neovim plugin
   use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager
   use "windwp/nvim-spectre" -- A search panel, find the enemy and replace them with dark power.
